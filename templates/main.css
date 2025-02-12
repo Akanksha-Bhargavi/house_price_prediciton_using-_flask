@@ -1,0 +1,105 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #f5f5f5;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: url('https://source.unsplash.com/1600x900/?interior'); 
+    background-size: cover;
+    filter: grayscale(50%); /* Optional: Apply grayscale effect */
+    animation: animateBackground 30s linear infinite;
+}
+
+@keyframes animateBackground {
+    0% {
+        filter: grayscale(50%) hue-rotate(0deg);
+    }
+    100% {
+        filter: grayscale(50%) hue-rotate(360deg);
+    }
+}
+
+.register-page {
+    width: 360px;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form {
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: cornflowerblue;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 8px;
+    display: block;
+}
+
+input {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.small-button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 10px;
+}
+
+.predict-button {
+    background-color: cornflowerblue;
+    color: white;
+}
+
+.clear-button,
+.back-button {
+    background-color: royalblue;
+    color: white;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: navy;
+}
+
+.result {
+    margin-top: 20px;
+    font-size: 16px;
+}

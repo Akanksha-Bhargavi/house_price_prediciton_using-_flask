@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>House Price Prediction</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="templates/main.css">
+</head>
+
+<body>
+    <div class="background"></div>
+    <div class="register-page">
+        <div class="form">
+            <h2>House Price Prediction</h2>
+            <form action="{{url_for('predict')}}" method="POST">
+                <label for="bedrooms">Bedrooms:</label>
+                <input type="number" id="bedrooms" name="bedrooms" placeholder="Enter the number of Bedrooms"> 
+
+                <label for="bathrooms">Bathrooms:</label>
+                <input type="number" id="bathrooms" name="bathrooms" placeholder="Enter the number of Bathrooms">
+
+                <label for="floors">Floors:</label>
+                <input type="number" id="floors" name="floors" placeholder="Enter the number of Floors">
+
+                <label for="yr_built">Year of Build:</label>
+                <input type="number" id="yr_built" name="yr_built" placeholder="Enter year of Build">
+
+                <label for="sq_leng">square length:</label>
+                <input type="number" id="yr_built" name="yr_built" placeholder="Enter square length">
+
+                <button type="submit" class="small-button predict-button">Predict</button>
+            </form>
+            <div class="button-container">
+                <button type="button" class="small-button clear-button" onclick="clearForm()">Clear</button> 
+                <button type="button" class="small-button back-button" onclick="goBack()">Back</button>
+            </div>
+
+            <p class="result">Estimated House Price: {{data}}</p>
+        </div>
+    </div>
+
+    <script>
+        function clearForm() {
+            document.getElementById("bedrooms").value = "";
+            document.getElementById("bathrooms").value = "";
+            document.getElementById("floors").value = "";
+            document.getElementById("yr_built").value = "";
+            document.getElementById("sq_leng").value = "";
+
+        }
+
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+
+</html>
